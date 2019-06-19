@@ -8,7 +8,7 @@ String driver = "com.mysql.jdbc.Driver";
 String connectionUrl = "jdbc:mysql://localhost:3306/";
 String database = "bridgelab";
 String userid = "root1";
-String password = "Admin@111";
+String password = "";
 try {
 Class.forName(driver);
 } catch (ClassNotFoundException e) {
@@ -42,7 +42,7 @@ while(resultSet.next()){
 <tr>
 <td><%=resultSet.getString("FirstName") %></td>
 <td><%=resultSet.getString("LastName") %></td>
-<td><%=resultSet.getString("PhoneNum") %></td>
+<td><%=resultSet.getString("phoneNum") %></td>
 <td><%=resultSet.getString("Email") %></td>
 </tr>
 <%
@@ -55,40 +55,3 @@ e.printStackTrace();
 </table>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
