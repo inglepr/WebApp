@@ -11,6 +11,13 @@
 		<config>src/main/resources/Bean.xml</config>
 		<config>src/main/resources/BeanPrototype.xml</config>
 		<config>src/main/resources/Bean1.xml</config>
+		<config>src/main/resources/Beans.xml</config>
+		<config>src/main/resources/bean2.xml</config>
+		<config>src/main/resources/beans3.xml</config>
+		<config>src/main/resources/Beans4.xml</config>
+		<config>src/main/resources/bean5.xml</config>
+		<config>src/main/resources/Beans6.xml</config>
+		<config>src/main/resources/Beanscollection.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
