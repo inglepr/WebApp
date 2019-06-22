@@ -18,6 +18,9 @@
 		<config>src/main/resources/bean5.xml</config>
 		<config>src/main/resources/Beans6.xml</config>
 		<config>src/main/resources/Beanscollection.xml</config>
+		<config>src/main/resources/beanfact.xml</config>
+		<config>src/main/resources/BeanAto.xml</config>
+		<config>src/main/resources/BeanAtowire.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
