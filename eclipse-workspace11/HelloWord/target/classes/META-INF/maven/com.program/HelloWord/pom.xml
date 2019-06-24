@@ -13,7 +13,23 @@
 			<artifactId>spring-context</artifactId>
 			<version>${spring.version}</version>
 		</dependency>
-	</dependencies>
+	
+	<dependency>
+	<groupId>org.aspectj</groupId>
+	<artifactId>aspectjrt</artifactId>
+	<version>1.7.4</version>
+</dependency>
+<dependency>
+	<groupId>org.springframework</groupId>
+	<artifactId>spring-tx</artifactId>
+	<version>4.3.3.RELEASE</version>
+</dependency>
+
+
+</dependencies>
+
+<!-- Thanks for using https://jar-download.com -->
+	
  
 	<properties>
 		<spring.version>3.2.3.RELEASE</spring.version>

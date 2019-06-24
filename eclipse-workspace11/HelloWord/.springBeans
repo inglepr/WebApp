@@ -21,6 +21,10 @@
 		<config>src/main/resources/beanfact.xml</config>
 		<config>src/main/resources/BeanAto.xml</config>
 		<config>src/main/resources/BeanAtowire.xml</config>
+		<config>src/main/resources/Beancofig.xml</config>
+		<config>src/main/resources/Beanaop.xml</config>
+		<config>src/main/resources/Beanaop1.xml</config>
+		<config>src/main/resources/Beanstx.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>
