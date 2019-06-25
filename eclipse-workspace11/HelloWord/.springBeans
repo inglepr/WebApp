@@ -25,6 +25,8 @@
 		<config>src/main/resources/Beanaop.xml</config>
 		<config>src/main/resources/Beanaop1.xml</config>
 		<config>src/main/resources/Beanstx.xml</config>
+		<config>src/main/resources/Beanfact.xml</config>
+		<config>src/main/resources/Beanconfig.xml</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

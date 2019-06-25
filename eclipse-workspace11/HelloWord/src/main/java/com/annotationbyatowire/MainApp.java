@@ -7,7 +7,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class MainApp {
 public static void main(String args[]) {
 	ApplicationContext context=new ClassPathXmlApplicationContext("BeanAtowire.xml");
-	SpellChecker chek=(SpellChecker)context.getBean("textEditor");
+	SpellChecker chek =(SpellChecker)context.getBean("textEditor");
 	chek.CheckSpelling();
 }
 }
