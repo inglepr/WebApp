@@ -1,0 +1,21 @@
+
+
+
+<div *ngIf="noteRe!=undefined">
+    <mat-chip-list>
+   
+  
+        <mat-chip style="font-size: 14px"  >{{noteRe | date:'medium'}} <mat-icon (click)="removeLabel(note)">close</mat-icon>
+        </mat-chip>
+              
+   
+  
+      <!-- <a>
+        <mat-chip style="font-size: 14px" >2019-08-05 16:34:54 <mat-icon (click)="removeLabel(note)">close</mat-icon>
+        </mat-chip>
+      </a> -->
+    </mat-chip-list>
+  
+  
+  </div>
+    

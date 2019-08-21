@@ -1,0 +1,117 @@
+<div style="   
+height: -webkit-fill-available;
+display: flex;
+flex-direction: row wrap;
+flex-flow: row wrap;
+align-items: flex-start;
+">
+
+<div *ngFor="let items of notes" style="margin-left: 7%;">
+<mat-card style=" width: fit-content; margin-left: 5%; margin-right: 5%;"
+  [ngStyle]="{'background-color':items.colorCode}">
+
+  <div style="margin-top:12px; display: flex; flex-direction: row; justify-content: space-between;">
+    <div (click)="openDialog(items)"
+      style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 20px">
+      {{items.title}}
+    </div>
+    <div class="apppin" (click)="pinNote(items)">
+      <span style="margin-left:60%">
+        <mat-icon matTooltip="pinned"><img src="../../../assets/unpinned.svg"></mat-icon>
+      </span>
+    </div>
+  </div>
+
+  <div (click)="openDialog(items)"
+    style="color: #202124;direction: ltr;font-family: 'Roboto',arial,sans-serif;font-size: 15px;margin-top:8px">
+    {{items.description}}
+  </div>
+
+  <app-label [noteLabel]="items"></app-label>
+
+  
+  <div [ngStyle]="{'background-color':items.colorCode}">
+    <div style="display: flex; flex-direction: row;align-items: start "
+      [ngStyle]="{'background-color':items.colorCode}">
+
+      <button matTooltip="Remind me" style="background-color: white;border-width: 0px;">
+
+        <mat-icon style="font-size: 17px !important" class="mat-color ">add_alert
+        </mat-icon>
+
+      </button>
+
+      <button matTooltip="collaborator" style="background-color: white;border-width: 0px;">
+        <mat-icon style="font-size: 17px !important" class="mat-color " (click)="openCollabsDialog(items)">group_add
+        </mat-icon>
+
+      </button>
+
+      <button matTooltip="Set Color" [matMenuTriggerFor]="colorMenu"
+        style="background-color: white;border-width: 0px;">
+        <mat-icon style="font-size: 17px !important" class="mat-color ">color_lens</mat-icon>
+      </button>
+
+      <button matTooltip="archieved" style="background-color: white;border-width: 0px;" (click)="onArchive(items)">
+        <mat-icon style="font-size: 17px !important" class="mat-color ">archive</mat-icon>
+      </button>
+
+      <button matTooltip="New note with image" style="background-color: white;border-width: 0px;">
+        <mat-icon style="font-size: 17px !important" class="mat-color ">image</mat-icon>
+      </button>
+      <span class="fill-remaining-space">
+        <mat-icon style="font-size: 17px !important" matTooltip="more" [matMenuTriggerFor]="menu"
+          class="mat-color ">more_vert</mat-icon>
+        <mat-menu #menu="matMenu" [overlapTrigger]="false">
+          <button mat-menu-item (click)="trashNote(items)">
+            <span>Delete Note</span>
+          </button>
+          <button mat-menu-item  [matMenuTriggerFor]="labelTrigger" [ngStyle]="{'background-color':items.colour}">
+
+              <span>Add Label</span>
+            </button>
+        </mat-menu>
+      </span>
+    </div>
+
+
+    <div>
+        <mat-menu #labelTrigger="matMenu">
+          <div>Label note</div>
+          <div *ngFor="let labels of allLabel">
+            <mat-checkbox (click)="addLabelToNote(labels,items)" class="addlabel">{{labels.labelName}}
+            </mat-checkbox>
+
+          </div>
+        </mat-menu>
+      </div>
+
+
+    <div>
+      <mat-menu #colorMenu="matMenu" fxFlex="80" [overlapTrigger]="false">
+
+        <div>
+          <div *ngFor="let color of colorCodes" fxLayout="row wrap">
+            <div *ngFor="let iteam of color">
+              <button matbutton [ngStyle]="{ 'background-color': iteam.name }"
+                (click)="changeColor(iteam.name,items.noteId)" matTooltip="{{ iteam.name }}" mat-mini-fab
+                class="color">
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </mat-menu>
+    </div>
+
+
+
+
+  </div>
+
+
+
+</mat-card>
+
+</div>
+</div>

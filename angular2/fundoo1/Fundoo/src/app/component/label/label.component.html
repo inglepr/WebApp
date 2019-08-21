@@ -1,0 +1,18 @@
+
+
+<div>
+    <mat-chip-list>
+      <a>
+  
+        <mat-chip style="font-size: 14px" *ngFor="let label of noteArray">{{label.labelName}} <mat-icon (click)="removeLabel(label)">close</mat-icon>
+        </mat-chip>
+   
+  
+      </a>
+  
+    </mat-chip-list>
+  
+  
+  </div>
+    
+  

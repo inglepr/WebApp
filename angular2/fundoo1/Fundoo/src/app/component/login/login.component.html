@@ -1,0 +1,61 @@
+
+<div fxLayout="column" fxLayoutAlign="start center" fxFlex="100" class="mainDiv">
+  <!-- <mat-card fxLayout="row" fxFlex="100" fxLayoutAlign="center center"></mat-card> -->
+  <div fxLayout="row" fxFlex="50" fxLayoutAlign="start center" class="78">
+
+    <mat-card fxLayout="column" fxFlex="100" fxLayoutAlign="center center" class="80">
+
+      <div fxLayout="row" fxLayoutAlign="center">
+        <mat-card-header fxLayout="row" class="4">
+          <mat-card-title>Login</mat-card-title>
+        </mat-card-header>
+      </div>
+      <form [formGroup]="loginForm">
+        <mat-card-content>
+          <div fxLayout="column" fxFlex="100" class="1">
+            <div fxLayout="row" fxLayoutAlign="center">
+              <mat-form-field appearance="outline">
+                <mat-label>Email Id</mat-label>
+                <input matInput placeholder="emailId" name="emailiId" formControlName="emailId"
+                  [(ngModel)]="userLogin.emailId" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+                <mat-icon matSuffix><img src="../../assets/outline-mail-24px.svg"></mat-icon>
+
+              </mat-form-field>
+            </div>
+
+
+            <div>
+
+              <div fxLayout="row" fxLayoutAlign="center">
+
+                <mat-form-field appearance="outline">
+                  <mat-label>password</mat-label>
+                  <input matInput placeholder="password" formControlName="password" [(ngModel)]="userLogin.password"
+                    type="password" name="password" required>
+                  <mat-icon matSuffix><img src="../../assets/outline-visibility_off-24px.svg">
+                  </mat-icon>
+
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </mat-card-content>
+
+        <mat-card-actions>
+          <div fxLayout="row" fxLayoutAlign="center">
+            <button mat-raised-button color="primary" id="login"  (click)="onLogin()" >Login</button>
+            <button mat-raised-button color="primary" id="register" routerLink='/registration'>Register</button>
+          </div>
+        </mat-card-actions>
+        <mat-card-actions>
+          <div fxLayout="row" fxLayoutAlign="center">
+            <button mat-button id="forgot" routerLink="/forgot" (click)="onForgot()">Forgot Password ?</button>
+          </div>
+        </mat-card-actions>
+      </form>
+
+      <!-- <app-social-login></app-social-login> -->
+    </mat-card>
+
+  </div>
+</div>

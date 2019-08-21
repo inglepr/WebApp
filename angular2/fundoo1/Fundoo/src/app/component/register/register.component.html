@@ -1,0 +1,92 @@
+
+<!-- <div fxLayout="column" fxFlex="50" fxLayoutAlign="center center" > -->
+    <div fxLayout="row" fxLayoutAlign="center" class="mainDiv">
+        <div fxLayout="row" fxFlex="50" fxLayoutAlign="center center">
+    
+            <mat-card fxLayout="column" fxFlex="70" fxLayoutAlign="start">
+    
+                <div fxLayout="row" fxLayoutAlign="center">
+                    <mat-card-header fxLayout="row" class="4">
+                        <mat-card-title>Registration</mat-card-title>
+                    </mat-card-header>
+    
+                </div>
+                <form [formGroup]="registerForm">
+                    <mat-card-content>
+                        <div fxLayout="column" fxFlex="100" class="1">
+                            <div fxLayout="row" fxLayoutAlign="center">
+                                <mat-form-field appearance="outline">
+                                    <mat-label>First Name</mat-label>
+                                    <input matInput placeholder="firstName" formControlName="firstName"
+                                        [(ngModel)]="user.firstName">
+                                    <mat-icon matSuffix><img src="../../assets/outline-face-24px.svg"></mat-icon>
+                                    <!-- <mat-hint>Hint</mat-hint> -->
+                                </mat-form-field>
+                            </div>
+                            <div>
+    
+                                <div fxLayout="row" fxLayoutAlign="center">
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Last Name</mat-label>
+                                        <input matInput placeholder="lastName" formControlName="lastName"
+                                            [(ngModel)]="user.lastName">
+                                        <mat-icon matSuffix><img src="../../assets/outline-face-24px.svg"></mat-icon>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+    
+                            <div>
+    
+                                <div fxLayout="row" fxLayoutAlign="center">
+    
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Email Id</mat-label>
+                                        <input matInput placeholder="emailId" formControlName="emailId"
+                                            [(ngModel)]="user.emailId">
+                                        <mat-icon matSuffix><img src="../../assets/outline-mail-24px.svg"></mat-icon>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div>
+    
+                                <div fxLayout="row" fxLayoutAlign="center">
+    
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>password</mat-label>
+                                        <input matInput placeholder="Password" formControlName="password"
+                                            [(ngModel)]="user.password" type="password" name="password" required>
+    
+    
+                                        <mat-icon matSuffix><img src="../../assets/outline-visibility_off-24px.svg">
+                                        </mat-icon>
+    
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div>
+    
+                                <div fxLayout="row" fxLayoutAlign="center">
+    
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Mobile Number</mat-label>
+                                        <input matInput placeholder="mobileNumber" formControlName="mobileNum"
+                                            [(ngModel)]="user.mobileNum">
+                                        <mat-icon matSuffix><img src="../../assets/outline-phone_iphone-24px.svg">
+                                        </mat-icon>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+    
+                            <mat-card-actions>
+                                <div fxLayout="row" fxLayoutAlign="center">
+                                        <button mat-raised-button color="primary" id="register" (click)="onRegister()">Register</button>
+                                        <button mat-raised-button color="primary" id="login" routerLink='/login'> Login </button>                            </div>
+    
+                            </mat-card-actions>
+    
+                        </div>
+                    </mat-card-content>
+                </form>
+            </mat-card>
+        </div>
+    </div>

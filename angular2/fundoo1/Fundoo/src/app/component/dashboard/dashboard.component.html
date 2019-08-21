@@ -1,0 +1,169 @@
+
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20%">
+    <mat-toolbar>
+      
+        <div fxFlex="100">
+            <div fxLayout="row" fxFlex="15" fxLayoutGap="25%">
+                    <div fxFlex="5">
+                            <button mat-icon-button (click)="sidenav.toggle()">
+                                <mat-icon matTooltip="menu">menu</mat-icon>
+                            </button>
+                        </div>
+                <div fxFlex="5">
+                    <img src="https://www.gstatic.com/images/branding/product/1x/keep_48dp.png">
+                </div>
+                <div class="fundoo" fxFlex="5">
+                    <span style="margin-right: 8px">Fundoo Notes</span>
+                </div>
+            </div>
+
+            <div fxFlex="70" fxLayout="row">
+             <mat-card class="search-bar">
+                    <button mat-icon-button>
+                        <mat-icon>search</mat-icon>
+                    </button>
+                    <input  placeholder="Search" [(ngModel)]="searchData.searchingData"
+                    (input)="onSearchChange($event.target.value)">
+                </mat-card>
+
+            </div>
+
+            <div fxFlex="35" fxLayout="row" fxLayoutGap="12%" style="margin-left: 100px; margin-top: 8px;">
+                <div fxFlex="7">
+                    <button mat-icon-button matTooltip="refresh" (click)="refresh()">
+                        <mat-icon matTooltip="Refresh">refresh</mat-icon>
+                    </button>
+
+                </div>
+                <div *ngIf="toggle==true"> <button mat-icon-button (click)="list()">
+                    <mat-icon><img src="../../../assets/NonGrid.svg" alt=""></mat-icon>
+                  </button>
+                </div>
+                <div *ngIf="toggle==false"> <button mat-icon-button (click)="grid()">
+        
+                    <mat-icon style="color: gray"><img src="../../../assets/gridIcon.svg" alt=""></mat-icon>
+                  </button>
+                </div>
+        
+                <div fxFlex="7">
+                    <button mat-icon-button>
+                        <mat-icon matTooltip="settings">settings</mat-icon>
+                    </button>
+                </div>
+                <!-- <div fxLayout="row" fxLayoutAlign="end center"> -->
+                <div fxFlex="7">
+                    <button mat-icon-button>
+                        <mat-icon matTooltip="app">apps</mat-icon>
+                    </button>
+                </div>
+                <div fxFlex="7">
+                        <button mat-icon-button [matMenuTriggerFor]="accountmenu" matTooltip={{email}}>
+                                <img mat-card-avatar src="http://localhost:8080/user/getuploadedimage/{{token}}">
+                              </button>
+                    </div>
+                </div>
+            </div>
+
+           
+       
+    </mat-toolbar>
+</div>
+
+    <mat-menu #accountmenu="matMenu">
+        <!-- <mat-card> -->
+        <div fxLayout="column" fxLayoutGap="50px">
+    
+    
+          <div fxLayout="row" fxLayoutAlign="space-between center" >
+            <div class="img1">
+              <img  class="img1" mat-card-avatar src="http://localhost:8080/user/getuploadedimage/{{token}}" >
+            </div>
+            <div>
+              <mat-card-title class="text_color">&nbsp;{{firstName}} {{lastName}}</mat-card-title>
+              <mat-card-subtitle>{{emailId}}</mat-card-subtitle>
+            </div>
+          </div>
+    
+          <div fxLayout="row" fxLayoutAlign="center center" fxLayoutGap="50px" class="margin">
+            <button mat-raised-button routerLink='/register'>Add Account</button>
+            <button mat-raised-button routerLink="/login" (click)="logout()">Sign out</button>
+        </div>
+
+    </div>
+    <!-- </mat-card> -->
+  </mat-menu>
+
+  <mat-sidenav-container fxFlexFill>
+    <mat-sidenav #sidenav mode="side" class="abc">
+      <div fxLayout="column" fxLayoutAlign="start" fxFlex="100" class="sideNav">
+        <div><button mat-button style="width:100%">
+            <mat-icon>lightbulb_outline</mat-icon><span style="margin:28%" role="listitem" (click)="note()">
+              Note</span>
+          </button>
+        </div>
+
+        <div>
+          <button mat-button style="width:100%">
+            <mat-icon>notifications_none</mat-icon><span style="margin:20%"> Reminders</span>
+          </button>
+        </div>
+        <div>
+          <mat-divider class="divider"></mat-divider>
+          <span class="name">LABELS</span>
+        </div>
+
+
+
+
+        <div>
+          <div *ngFor="let labels of label" style="display: flex;
+                             flex-direction: row; width: 100%">
+            <button mat-button style="width:100%">
+              <img src="../../../assets/outline-label-24px.svg"><span style="margin:20%">
+                {{labels.labelName}}
+              </span>
+            </button>
+          </div>
+
+        </div>
+        <div>
+          <button mat-button style="width:100%" (click)="opendialogLabel()" fxLayout="row"
+            fxLayoutAlign="space-between center">
+            <mat-icon><img src="../../../assets/outline-edit-24px.svg" alt=""></mat-icon>
+            <span style="margin:20%"> Edit Labels</span>
+          </button>
+        </div>
+
+        <div>
+          <mat-divider class="divider"></mat-divider>
+          <button mat-button style="width:100%">
+            <mat-icon>archive</mat-icon>
+            <span style="margin:27%" (click)='archive()'>Archive</span>
+          </button>
+        </div>
+
+        <div (click)='trash()'>
+          <button mat-button style="width:100%">
+            <mat-icon>delete_outline</mat-icon>
+            <span style="margin:30%">Trash</span>
+          </button>
+        </div>
+      </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content fxFlexFill>
+      <app-addnote></app-addnote>
+      <div class="margin1">
+        <app-search></app-search>
+
+        <router-outlet></router-outlet>
+      </div>
+
+
+        <!-- <app-search></app-search>  -->
+
+     
+
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>

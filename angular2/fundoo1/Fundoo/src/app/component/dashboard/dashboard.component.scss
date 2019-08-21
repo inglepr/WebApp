@@ -1,0 +1,168 @@
+.search-bar
+{
+    display: block;
+    position: relative;
+    padding: 8px;
+    width: 550px;
+    margin-left: 100px;
+    color: inherit;
+    height: 36px;
+    //border-radius: 20px; 
+}
+
+.search
+{
+    width: 450px; 
+    border: transparent;
+    outline: none;
+    border-color: #f1f3f4;
+    width: 512px;
+    height: 39px;
+}
+.fundoo
+{
+    flex: 1 1 100%;
+    box-sizing: border-box;
+    max-width: 5%;
+    margin-top: 8px;
+}
+
+
+.example-container 
+{
+    height: 100vh;
+    width: 100%;
+}
+  
+.example-sidenav-content
+{ 
+    width: 250px;
+}
+.button
+{
+        /* margin-bottom: -21px; */
+        margin-top: 16px;
+        /* margin-right: -10px; */
+        margin-left: 27px;
+}
+
+.label
+{
+    width: 238px;
+    border-radius: 20px
+}
+
+.menu-spacer {
+    flex: 1 1 auto;
+  }
+  
+  .mainDiv{
+    width: 20%;
+  }
+
+  .mat{
+  
+    width: 260%;
+}
+
+.button{
+ 
+  outline-color: white;
+  border-top-right-radius: 0%
+}
+
+.name{
+  color: #5f6268;
+  font-weight:inherit;
+  font-size: 11px;
+  font-family: Arial, sans-serif;
+
+}
+
+.searchInput{
+  display: flex;
+  border:none;
+  height: 48px;
+  width: 55vw;
+  background-color: #d8e2e2;
+  border-radius: 8px;
+  font-size: 15px;
+  border-color: lightgray;  
+  margin-left: 68px;
+  outline: none;
+  box-shadow: none;
+}
+.searchInput::-webkit-input-placeholder {
+  color: #81878c;
+  font-weight: lighter;
+  font-size: 18px;
+  font-family:Arial, Helvetica, sans-serif;
+  line-height: 40px;
+}
+
+.mat-button{
+  outline: none;
+  background-color: transparent;
+  border-top-right-radius: 38px;
+  border-bottom-right-radius: 38px;
+}
+.mat-button:focus{
+background-color: orange;
+}
+
+.margin
+{
+  margin-top: -29px;
+}
+.margin1
+{
+  margin-top: -440px;
+}
+
+.margin11
+{
+  margin-top: 100px;
+}
+
+.margin12{
+  margin-top: 100px;
+}
+
+.spacing
+{
+  margin-left: 107px;
+}
+
+.sideNav
+{
+  width: 225px;
+}
+
+.sideNav
+{
+  width: 248px;
+}
+
+.icon{
+  margin-top: -2px;
+  margin-left: 50px;
+}
+
+.color{
+  background-color: lightgray;
+  outline: none;
+}
+
+.img1{    height: 71px;
+  width: 71px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  object-fit: cover;
+  }
+
+  .text_color{
+    display: block;
+    margin-bottom: 8px;
+    font-size: 20px;
+
+  }
